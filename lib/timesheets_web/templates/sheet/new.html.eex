@@ -1,0 +1,24 @@
+<h1>New Timesheet</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.sheet_path(@conn, :create)) %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Job Code</th>
+      <th>Budget</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for job <- @jobs do %>
+    <tr>
+      <td><%= job.job_code %></td>
+      <td><%= job.budget %></td>
+      <td><%= job.description %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Back", to: Routes.page_path(@conn, :worker, @current_user.email) %></span>

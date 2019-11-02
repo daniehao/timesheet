@@ -1,0 +1,66 @@
+<h1>Show Sheet</h1>
+
+<ul>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @sheet.date %>
+  </li>
+
+  <li>
+    <strong>Hour1:</strong>
+    <%= @sheet.hour1 %>
+  </li>
+
+  <li>
+    <strong>Hour2:</strong>
+    <%= @sheet.hour2 %>
+  </li>
+
+  <li>
+    <strong>Hour3:</strong>
+    <%= @sheet.hour3 %>
+  </li>
+
+  <li>
+    <strong>Hour4:</strong>
+    <%= @sheet.hour4 %>
+  </li>
+
+  <li>
+    <strong>Hour5:</strong>
+    <%= @sheet.hour5 %>
+  </li>
+
+  <li>
+    <strong>Hour6:</strong>
+    <%= @sheet.hour6 %>
+  </li>
+
+  <li>
+    <strong>Hour7:</strong>
+    <%= @sheet.hour7 %>
+  </li>
+
+  <li>
+    <strong>Hour8:</strong>
+    <%= @sheet.hour8 %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @sheet.status %>
+  </li>
+
+</ul>
+
+<div>
+  <%= if @current_user.is_manager do %>
+    <%= if @sheet.status == "Waiting" do %>
+    	<%= link "Approve", to: Routes.page_path(@conn, :approve, @sheet.id) %><br>
+    <% end %>
+    <%= link "Back", to: Routes.page_path(@conn, :manager, @current_user.email) %>
+  <% else %>
+    <%= link "Back", to: Routes.page_path(@conn, :worker, @current_user.email) %>
+  <% end %>
+</div>

@@ -1,0 +1,51 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :date %>
+  <%= date_select f, :date %>
+  <%= error_tag f, :date %>
+
+  <%= label f, :hour1 %>
+  <%= text_input f, :hour1 %>
+  <%= error_tag f, :hour1 %>
+
+  <%= label f, :hour2 %>
+  <%= text_input f, :hour2 %>
+  <%= error_tag f, :hour2 %>
+
+  <%= label f, :hour3 %>
+  <%= text_input f, :hour3 %>
+  <%= error_tag f, :hour3 %>
+
+  <%= label f, :hour4 %>
+  <%= text_input f, :hour4 %>
+  <%= error_tag f, :hour4 %>
+
+  <%= label f, :hour5 %>
+  <%= text_input f, :hour5 %>
+  <%= error_tag f, :hour5 %>
+
+  <%= label f, :hour6 %>
+  <%= text_input f, :hour6 %>
+  <%= error_tag f, :hour6 %>
+
+  <%= label f, :hour7 %>
+  <%= text_input f, :hour7 %>
+  <%= error_tag f, :hour7 %>
+
+  <%= label f, :hour8 %>
+  <%= text_input f, :hour8 %>
+  <%= error_tag f, :hour8 %>
+
+  <%= label f, :status %>
+  <%= text_input f, :status %>
+  <%= error_tag f, :status %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>

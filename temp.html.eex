@@ -1,0 +1,15 @@
+
+<%= for worker <- @manager.workers do %>
+  <%= for sheet <- @worker.sheets do %>
+    <tr>
+      <td><%= sheet.date %></td>
+      <td><%= sheet.status %></td>
+      <td>
+        <span><%= link "View", to: Routes.sheet_path(@conn, :show, sheet.id) %></span>
+      </td>
+    </tr>
+  <% end %>
+<% end %>
+  </tbody>
+</table>
+

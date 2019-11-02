@@ -1,0 +1,31 @@
+<h1> Name: <%= @manager.name %></h1>
+<h1> Listing Timesheets</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Worker</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for worker <- @manager.workers do %>
+  <%= for sheet <- worker.sheets do %>
+    <tr>
+      <td><%= worker.name %></td>
+      <td><%= sheet.date %></td>
+      <td><%= sheet.status %></td>
+      <td>
+        <span><%= link "View", to: Routes.sheet_path(@conn, :show, sheet.id) %></span>
+      </td>
+    </tr>
+  <% end %>
+<% end %>
+  </tbody>
+</table>
+
+  </tbody>
+</table>
+

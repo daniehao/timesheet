@@ -1,0 +1,44 @@
+<h1>Listing Tsheets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Hour1</th>
+      <th>Hour2</th>
+      <th>Hour3</th>
+      <th>Hour4</th>
+      <th>Hour5</th>
+      <th>Hour6</th>
+      <th>Hour7</th>
+      <th>Hour8</th>
+      <th>Status</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for tsheet <- @tsheets do %>
+    <tr>
+      <td><%= tsheet.date %></td>
+      <td><%= tsheet.hour1 %></td>
+      <td><%= tsheet.hour2 %></td>
+      <td><%= tsheet.hour3 %></td>
+      <td><%= tsheet.hour4 %></td>
+      <td><%= tsheet.hour5 %></td>
+      <td><%= tsheet.hour6 %></td>
+      <td><%= tsheet.hour7 %></td>
+      <td><%= tsheet.hour8 %></td>
+      <td><%= tsheet.status %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.tsheet_path(@conn, :show, tsheet) %></span>
+        <span><%= link "Edit", to: Routes.tsheet_path(@conn, :edit, tsheet) %></span>
+        <span><%= link "Delete", to: Routes.tsheet_path(@conn, :delete, tsheet), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Tsheet", to: Routes.tsheet_path(@conn, :new) %></span>

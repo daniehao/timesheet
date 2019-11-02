@@ -1,0 +1,44 @@
+<h1>Listing Sheets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Hour1</th>
+      <th>Hour2</th>
+      <th>Hour3</th>
+      <th>Hour4</th>
+      <th>Hour5</th>
+      <th>Hour6</th>
+      <th>Hour7</th>
+      <th>Hour8</th>
+      <th>Status</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for sheet <- @sheets do %>
+    <tr>
+      <td><%= sheet.date %></td>
+      <td><%= sheet.hour1 %></td>
+      <td><%= sheet.hour2 %></td>
+      <td><%= sheet.hour3 %></td>
+      <td><%= sheet.hour4 %></td>
+      <td><%= sheet.hour5 %></td>
+      <td><%= sheet.hour6 %></td>
+      <td><%= sheet.hour7 %></td>
+      <td><%= sheet.hour8 %></td>
+      <td><%= sheet.status %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.sheet_path(@conn, :show, sheet) %></span>
+        <span><%= link "Edit", to: Routes.sheet_path(@conn, :edit, sheet) %></span>
+        <span><%= link "Delete", to: Routes.sheet_path(@conn, :delete, sheet), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Sheet", to: Routes.sheet_path(@conn, :new) %></span>

@@ -1,0 +1,58 @@
+<h1>Show Tsheet</h1>
+
+<ul>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @tsheet.date %>
+  </li>
+
+  <li>
+    <strong>Hour1:</strong>
+    <%= @tsheet.hour1 %>
+  </li>
+
+  <li>
+    <strong>Hour2:</strong>
+    <%= @tsheet.hour2 %>
+  </li>
+
+  <li>
+    <strong>Hour3:</strong>
+    <%= @tsheet.hour3 %>
+  </li>
+
+  <li>
+    <strong>Hour4:</strong>
+    <%= @tsheet.hour4 %>
+  </li>
+
+  <li>
+    <strong>Hour5:</strong>
+    <%= @tsheet.hour5 %>
+  </li>
+
+  <li>
+    <strong>Hour6:</strong>
+    <%= @tsheet.hour6 %>
+  </li>
+
+  <li>
+    <strong>Hour7:</strong>
+    <%= @tsheet.hour7 %>
+  </li>
+
+  <li>
+    <strong>Hour8:</strong>
+    <%= @tsheet.hour8 %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @tsheet.status %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.tsheet_path(@conn, :edit, @tsheet) %></span>
+<span><%= link "Back", to: Routes.tsheet_path(@conn, :index) %></span>
